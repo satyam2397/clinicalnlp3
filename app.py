@@ -79,7 +79,7 @@ def processRequest(req):
     #Getting the intent which has fullfilment enabled
     intent = result.get("intent").get('displayName')
     
-    if (intent=='yes'):
+    if (intent=='Default Welcome Intent - yes - problem'):
     
         queryText = result.get("queryText")
         queryText = queryText.strip().lower()
