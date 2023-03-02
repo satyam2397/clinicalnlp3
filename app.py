@@ -13,6 +13,7 @@ from flask_cors import cross_origin
 import pickle,shutil, os
 import re, itertools, string
 import pandas as pd
+import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Declaring the flask app
