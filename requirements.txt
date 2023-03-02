@@ -11,3 +11,4 @@ scipy
 sklearn
 sklearn-crfsuite
 GitPython
+nltk
