@@ -58,7 +58,7 @@ defusedxml==0.7.1
 dnspython==1.16.0
 docker==4.2.2
 docopt==0.6.2
-en-core-sci-sm @ /en_core_sci_sm-0.5.1.tar.gz
+en-core-sci-sm @ en_core_sci_sm-0.5.1.tar.gz
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.1/en_core_web_sm-3.4.1-py3-none-any.whl
 entrypoints==0.4
 executing==0.8.3
