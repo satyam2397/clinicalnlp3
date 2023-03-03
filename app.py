@@ -93,11 +93,11 @@ def processRequest(req):
         queryText = lemmatize_col(queryText)
         
         #-------------------------------------------------------------------------------------------#
-        vectorizar = pickle.load(open('/tfidf/vectorizer.pkl', 'rb'))
+        vectorizar = pickle.load(open('tfidf/vectorizer.pkl', 'rb'))
         queryText_tfidf = vectorizar.transform([queryText])
         #-------------------------------------------------------------------------------------------#
     
-        my_path = "/models_nlp/"
+        my_path = "models_nlp/"
         file_list = os.listdir(my_path)
     
         res_final = pd.DataFrame()
