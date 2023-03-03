@@ -15,8 +15,9 @@ import re, itertools, string
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
-nltk.download('punkt')
-nltk.download('wordnet')
+#nltk.download('punkt')
+#nltk.download('wordnet')
+nltk.download('popular')
 
 # Declaring the flask app
 app = Flask(__name__)
