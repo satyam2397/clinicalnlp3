@@ -102,16 +102,15 @@ def processRequest(req):
     
         res_final = pd.DataFrame()
         for model in file_list:
- #           print(model)
-            try:
-             log_classifier = pickle.load(open(model, 'rb'))
-             prediction_prob = log_classifier.predict_proba(queryText_tfidf)
-             if prediction_prob[0][1] >= 0.1:
-                 res = pd.DataFrame(prediction_prob, columns = ['prob0', 'prob1'])
-                 res['disease'] = model[0:-4]
-                 res_final = res_final.append(res)
-            except:
-                print('fail')  
+#            try:
+            log_classifier = pickle.load(open(model, 'rb'))
+            prediction_prob = log_classifier.predict_proba(queryText_tfidf)
+            if prediction_prob[0][1] >= 0.1:
+                res = pd.DataFrame(prediction_prob, columns = ['prob0', 'prob1'])
+                res['disease'] = model[0:-4]
+                res_final = res_final.append(res)
+#            except:
+#                print('fail')  
                     
             res_final = res_final.sort_values(['prob1'])
         fulfillmentText = ', '.join(res_final['disease'].tolist())
