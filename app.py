@@ -112,7 +112,7 @@ def processRequest(req):
 #            except:
 #                print('fail')  
                     
-            res_final = res_final.sort_values(['prob1'])
+        res_final = res_final.sort_values(['prob1'])
         fulfillmentText = ', '.join(res_final['disease'].tolist())
     return {"fulfillmentText": fulfillmentText}
 
