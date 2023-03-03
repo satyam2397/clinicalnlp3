@@ -13,8 +13,10 @@ from flask_cors import cross_origin
 import pickle,shutil, os
 import re, itertools, string
 import pandas as pd
-import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
 
 # Declaring the flask app
 app = Flask(__name__)
