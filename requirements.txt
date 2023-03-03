@@ -8,7 +8,6 @@ jsonpickle==2.2.0
 jsonschema==4.6.0
 scikit-learn==1.0.2
 scipy
-sklearn
 sklearn-crfsuite
 GitPython
 nltk
