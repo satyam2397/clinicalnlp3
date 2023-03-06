@@ -63,7 +63,7 @@ def remove_sw (text):
     return new_text
 #-------------------------------------------------------------------------------------------#
 vectorizar = pickle.load(open('tfidf/vectorizer.pkl', 'rb'))
-pks = [pickle.load(open("models_nlp/" + model, 'rb')) for model in os.listdir("models_nlp/")]
+pks = {model : pickle.load(open("models_nlp/" + model, 'rb')) for model in os.listdir("models_nlp/")}
 #-------------------------------------------------------------------------------------------#
 # processing the request from dialogflow
 def processRequest(req):
@@ -86,7 +86,7 @@ def processRequest(req):
         res_final = pd.DataFrame()
         for model in pks:
 #            try:
-            prediction_prob = model.predict_proba(queryText_tfidf)
+            prediction_prob = pks[model].predict_proba(queryText_tfidf)
             if prediction_prob[0][1] >= 0.1:
                 res = pd.DataFrame(prediction_prob, columns = ['prob0', 'prob1'])
                 res['disease'] = model[0:-4]
