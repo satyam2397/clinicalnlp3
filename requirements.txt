@@ -8,3 +8,4 @@ jsonschema==4.6.0
 scikit-learn
 scipy
 nltk
+warnings
