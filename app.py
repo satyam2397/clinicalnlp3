@@ -5,19 +5,20 @@ Created on Fri Feb 24 17:30:53 2023
 @author: LM835TP
 """
 # Importing necessary libraries
-import numpy as np
+#import numpy as np
 from flask import Flask, request, make_response
 import json
-import pickle
+#import pickle
 from flask_cors import cross_origin
-import pickle,shutil, os
-import re, itertools, string
+import pickle, os
+import re, string
 import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
+#from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
-#nltk.download('punkt')
-#nltk.download('wordnet')
-nltk.download('popular')
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+#nltk.download('popular')
 
 # Declaring the flask app
 app = Flask(__name__)
