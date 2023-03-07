@@ -88,17 +88,20 @@ def processRequest(req):
 
         res_final = pd.DataFrame()
         for model in pks:
-#            try:
-            prediction_prob = pks[model].predict_proba(queryText_tfidf)
-            if prediction_prob[0][1] >= 0.1:
-                res = pd.DataFrame(prediction_prob, columns = ['prob0', 'prob1'])
-                res['disease'] = model[0:-4]
-                res_final = res_final.append(res)
-#            except:
-#                print('fail')  
-                    
-        res_final = res_final.sort_values(['prob1'])
-        fulfillmentText = ', '.join(res_final['disease'].tolist())
+            try:
+                prediction_prob = pks[model].predict_proba(queryText_tfidf)
+                if prediction_prob[0][1] >= 0.1:
+                    res = pd.DataFrame(prediction_prob, columns = ['prob0', 'prob1'])
+                    res['disease'] = model[0:-4]
+                    res_final = res_final.append(res)
+            except:
+                print('fail')  
+        
+        try: 
+            res_final = res_final.sort_values(['prob1'])
+            fulfillmentText = 'Your symptoms are: ' + ', '.join(res_final['disease'].tolist()) + '\nThanks for using us.'
+        except:
+            fulfillmentText = 'I am sorry. I am unable to infer right now. Please try again.'
     return {"fulfillmentText": fulfillmentText}
 
 #-------------------------------------------------------------------------------------------#
