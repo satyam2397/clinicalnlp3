@@ -15,9 +15,11 @@ import re, string
 import pandas as pd
 #from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
-nltk.download('punkt')
-nltk.download('wordnet')
-nltk.download('averaged_perceptron_tagger')
+from nltk.stem import WordNetLemmatizer 
+from nltk.corpus import wordnet
+#nltk.download('punkt')
+#nltk.download('wordnet')
+#nltk.download('averaged_perceptron_tagger')
 import warnings
 warnings.filterwarnings("ignore")
 
