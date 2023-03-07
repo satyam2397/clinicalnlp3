@@ -99,7 +99,7 @@ def processRequest(req):
         
         try: 
             res_final = res_final.sort_values(['prob1'])
-            fulfillmentText = 'Your symptoms are: ' + ', '.join(res_final['disease'].tolist()) + '\nThanks for using us.'
+            fulfillmentText = 'Your symptoms are: ' + ', '.join(res_final['disease'].tolist()) + '\n. Thanks for using us.'
         except:
             fulfillmentText = 'I am sorry. I am unable to infer right now. Please try again.'
     return {"fulfillmentText": fulfillmentText}
